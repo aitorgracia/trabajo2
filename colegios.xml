@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<colegios>
+    <colegio>
+        <nombre>Col1</nombre>
+        <direccion>Dir1</direccion>
+        <localidad>Loc1</localidad>
+        <nalumnos>100</nalumnos>
+        <naulas>10</naulas>
+    </colegio>
+   <colegio>
+        <nombre>Col2</nombre>
+        <direccion>Dir2</direccion>
+        <localidad>Loc2</localidad>
+        <nalumnos>200</nalumnos>
+        <naulas>20</naulas>
+    </colegio><colegio>
+        <nombre>Col3</nombre>
+        <direccion>Dir3</direccion>
+        <localidad>Loc3</localidad>
+        <nalumnos>300</nalumnos>
+        <naulas>30</naulas>
+    </colegio><colegio>
+        <nombre>Col4</nombre>
+        <direccion>Dir4</direccion>
+        <localidad>Loc4</localidad>
+        <nalumnos>400</nalumnos>
+        <naulas>40</naulas>
+    </colegio>
+</colegios>
