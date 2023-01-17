@@ -1,0 +1,76 @@
+{
+	"colegios": {
+		"colegio": [
+			{
+				"nombre": "Col1",
+				"direccion": "Dir1",
+				"localidad": "Loc1",
+				"nalumnos": "100",
+				"naulas": "10"
+			},
+			{
+				"nombre": "Col2",
+				"direccion": "Dir2",
+				"localidad": "Loc2",
+				"nalumnos": "200",
+				"naulas": "20"
+			},
+			{
+				"nombre": "Col3",
+				"direccion": "Dir3",
+				"localidad": "Loc3",
+				"nalumnos": "300",
+				"naulas": "30"
+			},
+			{
+				"nombre": "Col4",
+				"direccion": "Dir4",
+				"localidad": "Loc4",
+				"nalumnos": "400",
+				"naulas": "40"
+			},
+			{
+				"nombre": "Col5",
+				"direccion": "Dir5",
+				"localidad": "Loc5",
+				"nalumnos": "500",
+				"naulas": "50"
+			},
+			{
+				"nombre": "Col6",
+				"direccion": "Dir6",
+				"localidad": "Loc6",
+				"nalumnos": "600",
+				"naulas": "60"
+			},
+			{
+				"nombre": "Col7",
+				"direccion": "Dir7",
+				"localidad": "Loc7",
+				"nalumnos": "700",
+				"naulas": "70"
+			},
+			{
+				"nombre": "Col8",
+				"direccion": "Dir8",
+				"localidad": "Loc8",
+				"nalumnos": "800",
+				"naulas": "80"
+			},
+			{
+				"nombre": "Col9",
+				"direccion": "Dir9",
+				"localidad": "Loc9",
+				"nalumnos": "900",
+				"naulas": "90"
+			},
+			{
+				"nombre": "Col10",
+				"direccion": "Dir10",
+				"localidad": "Loc10",
+				"nalumnos": "1000",
+				"naulas": "100"
+			}
+		]
+	}
+}
