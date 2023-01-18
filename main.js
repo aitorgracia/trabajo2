@@ -125,7 +125,12 @@ function rellenarTablaColegios(listaColes) {
         fila.insertCell().innerHTML = listaColes.colegios[i].naulas;
 
         mod = document.createElement("button")
-        mod.classList.add= ("ModificarColegios("+i+")");
+        mod.className += "modificarColegios ";
+        mod.className += 1+i;
+        
+
+        
+
         mod.innerHTML = "Modificar este";
 
         fila.insertCell().appendChild(mod);
@@ -133,4 +138,90 @@ function rellenarTablaColegios(listaColes) {
     }
 
     document.querySelector(".contenedor").appendChild(tabla_coles);
+
+    var botones = document.querySelectorAll(".modificarColegios");
+
+    botones.forEach(boton => {
+        boton.addEventListener("click",editarColegios)
+    });
+    
+}
+
+function editarColegios() {
+    
+    var campo = prompt("¿Qué campo quieres editar?")
+
+    var tabla = document.querySelector(".tablaColegios>tbody");
+
+    var enc = false
+
+    row = tabla.rows[0];
+
+    for (var j = 0, col; col = row.cells[j]; j++) {
+
+        if(col.innerText == campo && campo != "Modificar este")
+        {
+            var cell = j;
+            enc = true;
+
+        }
+
+    }
+
+    if (enc) {
+        
+        var dato = prompt("¿Cual es el nuevo dato?")
+        tabla.rows[this.classList[1]].cells[cell].innerText = dato;
+
+        cell = cell;
+
+        switch (campo) {
+            case "Nombre":
+                
+            coles[cell].nombre = dato;;
+
+            break;
+
+            case "Descripcion":
+                
+                coles[cell].descripcion = dato;
+
+            break;
+
+            case "Localidad":
+                
+                coles[cell].localidad = dato;  
+
+            break;
+
+            case "Nº Alumnos":
+                
+                coles[cell].nalumnos = dato;  
+
+            break;
+
+            case "Nº Aulas":
+                
+                coles[cell].naulas = dato;  
+
+            break;
+        
+            default:
+                break;
+        }
+
+        
+
+    }
+
+    else
+    {
+
+        alert("No hay ningun campo con ese nombre, prueba de nuevo");
+
+    }
+    
+    listaColes = new listaColegios(coles);
+    rellenarTablaColegios(listaColes)
+
 }

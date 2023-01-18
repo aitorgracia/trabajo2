@@ -9,3 +9,39 @@
     align-items: center;
 
 }
+
+.tablaColegios
+{
+
+    background-color: #e68a00;
+    color: white;
+
+}
+
+.tablaColegios tr:first-child>td
+{
+
+    background-color: #b36b00;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+}
+
+.tablaColegios td
+{
+
+    width: 100px;
+    text-align: center;
+
+    background-color: #e68a00;
+
+}
+
+.modificarColegios
+{
+
+    width: 90%;
+    color: white;
+    background-color: #804d00;
+
+}
