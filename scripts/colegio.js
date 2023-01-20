@@ -24,4 +24,11 @@ class listaColegios
 
     }
 
+    introducirColegio(colegio)
+    {
+
+        this.colegios.push(colegio)
+
+    }
+
 }

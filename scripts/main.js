@@ -1,49 +1,15 @@
-let coles = [];
+var listaColes;
 
 function princ() {
     var boton1 = document.querySelector(".botonColegio");
 
-    boton1.addEventListener("click",añadirColegios);
+    boton1.addEventListener("click",añadirColegiosDelFormulario);
 
-    recibirColegios();
-
-}
-
-function añadirColegios() {
-    if (!document.querySelector(".tablaColegios")) {
-        tabla_coles = document.createElement("table")
-        tabla_coles.classList.add("tablaColegios")
-
-        let fila = tabla_coles.insertRow();
-
-        fila.insertCell().innerHTML = "Nombre";
-        fila.insertCell().innerHTML = "Direccion";
-        fila.insertCell().innerHTML = "Localidad";
-        fila.insertCell().innerHTML = "Nº Alumnos";
-        fila.insertCell().innerHTML = "Nº Aulas";
-    }
-    else
-    {
-        tabla_coles = document.querySelector(".tablaColegios")
-    }
-
-    col = new Colegio(
-        document.querySelector(".colnom").value,
-        document.querySelector(".coldir").value,
-        document.querySelector(".colloc").value,
-        document.querySelector(".colnalu").value,
-        document.querySelector(".colnaul").value
-
-
-    )
-    coles.push(col)
-
-    listaColes = new listaColegios(coles);
-    rellenarTablaColegios(listaColes)
+    recibirColegiosDelJson();
 
 }
 
-function recibirColegios() {
+function recibirColegiosDelJson() {
 
     var xhttp = new XMLHttpRequest();
 
@@ -51,13 +17,13 @@ function recibirColegios() {
         
         if (this.readyState == 4 && this.status == 200) {
             
-            obtenerListaColegios(JSON.parse(this.responseText))
+            recorrerJsonDeColegios(JSON.parse(this.responseText))
 
         }
 
     }
 
-    xhttp.open("GET", "colegios.json", true);
+    xhttp.open("GET", "../json/colegios.json", true);
 
 
     xhttp.send();
@@ -67,9 +33,11 @@ function recibirColegios() {
 
 }
 
-function obtenerListaColegios(xhttp) {
+function recorrerJsonDeColegios(json) {
 
-    var cole = xhttp.colegios.colegio;
+    var cole = json.colegios.colegio;
+
+    var coles = [];
 
     for (let index = 0; index < cole.length; index++) {
 
@@ -89,11 +57,31 @@ function obtenerListaColegios(xhttp) {
     }
     
     listaColes = new listaColegios(coles);
-    rellenarTablaColegios(listaColes)
+    rellenarTablaColegios()
 
 }
 
-function rellenarTablaColegios(listaColes) {
+function añadirColegiosDelFormulario() {
+    
+    tabla_coles = document.querySelector(".tablaColegios");
+
+    col = new Colegio(
+        document.querySelector(".colnom").value,
+        document.querySelector(".coldir").value,
+        document.querySelector(".colloc").value,
+        document.querySelector(".colnalu").value,
+        document.querySelector(".colnaul").value
+
+
+    )
+
+    listaColes.introducirColegio(col)
+
+    rellenarTablaColegios()
+
+}
+
+function rellenarTablaColegios() {
 
     if (!document.querySelector(".tablaColegios")) {
         tabla_coles = document.createElement("table")
@@ -161,7 +149,7 @@ function editarColegios() {
 
         if(col.innerText == campo && campo != "Modificar este")
         {
-            var cell = j;
+
             enc = true;
 
         }
@@ -170,39 +158,41 @@ function editarColegios() {
 
     if (enc) {
         
-        var dato = prompt("¿Cual es el nuevo dato?")
-        tabla.rows[this.classList[1]].cells[cell].innerText = dato;
+        var dato = prompt("¿Cual es el nuevo dato?");
 
-        cell = cell;
+        cell = this.classList[1];
+
+        cell = cell - 1;
+
 
         switch (campo) {
             case "Nombre":
                 
-            coles[cell].nombre = dato;;
+                listaColes.colegios[cell].nombre = dato;
 
             break;
 
-            case "Descripcion":
+            case "Direccion":
                 
-                coles[cell].descripcion = dato;
+                listaColes.colegios[cell].direccion = dato;
 
             break;
 
             case "Localidad":
                 
-                coles[cell].localidad = dato;  
+                listaColes.colegios[cell].localidad = dato;  
 
             break;
 
             case "Nº Alumnos":
                 
-                coles[cell].nalumnos = dato;  
+                listaColes.colegios[cell].nalumnos = dato;  
 
             break;
 
             case "Nº Aulas":
                 
-                coles[cell].naulas = dato;  
+                listaColes.colegios[cell].naulas = dato;  
 
             break;
         
@@ -213,7 +203,6 @@ function editarColegios() {
         
 
     }
-
     else
     {
 
@@ -221,7 +210,6 @@ function editarColegios() {
 
     }
     
-    listaColes = new listaColegios(coles);
-    rellenarTablaColegios(listaColes)
+    rellenarTablaColegios()
 
 }

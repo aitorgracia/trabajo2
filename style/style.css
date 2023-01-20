@@ -1,0 +1,97 @@
+body
+{
+
+
+    background-image: url(../img/fondo.jfif);
+    background-repeat: no-repeat;
+    background-size: auto;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.contenedor
+{
+
+    width: 80%;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.tablaColegios
+{
+
+    background-color: #e68a00;
+    color: white;
+
+}
+
+.tablaColegios tr:first-child>td
+{
+
+    background-color: #b36b00;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+}
+
+.tablaColegios td
+{
+
+    width: 100px;
+    text-align: center;
+
+    background-color: #e68a00;
+
+}
+
+.modificarColegios
+{
+
+    width: 90%;
+    color: white;
+    background-color: #804d00;
+
+}
+
+.formcol
+{
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+
+}
+
+.form
+{
+
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 20px;
+    
+    
+    border-radius: 5%;
+
+    background-color: #e68a00;
+
+}
+
+.botonColegio
+{
+
+    width: 30%;
+    color: white;
+    background-color: #804d00;
+
+}

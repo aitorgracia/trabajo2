@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style/style.css">
 </head>
 <body onload="princ()">
     
@@ -10,26 +10,19 @@
 
         <div class="form">
 
-            <form action="">
+            <form class="formcol" action="">
                 <h1>Introduccion de colegio</h1>
-                <label for="nombre">Nombre: </label>
-                <input class="colnom" type="text" name="nombre"> <br>
-                <label for="direccion">Direccion: </label>
-                <input class="coldir" type="text" name="direccion"> <br>
-                <label for="localidad">Localidad: </label>
-                <input class="colloc" type="text" name="localidad"> <br>
-                <label for="nalumnos">Nº Alumnos: </label>
-                <input class="colnalu" type="text" name="nalumnos"> <br>
-                <label for="naulas">Nº Aulas: </label>
-                <input class="colnaul" type="text" name="naulas"> <br>
-                
-
+                <input placeholder="Nombre" class="inputcol colnom" type="text" name="nombre"> <br>
+                <input placeholder="Direccion" class="inputcol coldir" type="text" name="direccion"> <br>
+                <input placeholder="Localidad" class="inputcol colloc" type="text" name="localidad"> <br>
+                <input placeholder="Nº Alumnos" class="inputcol colnalu" type="text" name="nalumnos"> <br>
+                <input placeholder="Nº Aulas" class="inputcol colnaul" type="text" name="naulas"> <br>
             </form>
             <button class="botonColegio">Enviar</button>
         </div>
     </div>
 
 </body>
-<script src="colegio.js" type="text/javascript"></script>
-<script src="main.js" type="text/javascript"></script>
+<script src="scripts/colegio.js" type="text/javascript"></script>
+<script src="scripts/main.js" type="text/javascript"></script>
 </html>
