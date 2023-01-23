@@ -57,7 +57,7 @@ function recorrerJsonDeColegios(json) {
     }
     
     listaColes = new listaColegios(coles);
-    rellenarTablaColegios()
+    actualizarTablaColegios()
 
 }
 
@@ -77,11 +77,11 @@ function añadirColegiosDelFormulario() {
 
     listaColes.introducirColegio(col)
 
-    rellenarTablaColegios()
+    actualizarTablaColegios()
 
 }
 
-function rellenarTablaColegios() {
+function actualizarTablaColegios() {
 
     if (!document.querySelector(".tablaColegios")) {
         tabla_coles = document.createElement("table")
@@ -210,6 +210,6 @@ function editarColegios() {
 
     }
     
-    rellenarTablaColegios()
+    actualizarTablaColegios()
 
 }
