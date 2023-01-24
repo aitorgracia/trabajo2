@@ -136,8 +136,11 @@ function actualizarTablaColegios() {
 }
 
 function editarColegios() {
-    
-    var campo = prompt("¿Qué campo quieres editar?")
+
+    cell = this.classList[1];
+    cell = cell - 1;
+
+    var campo = prompt("¿Qué campo del "+listaColes.colegios[cell].nombre+" quieres editar?");
 
     var tabla = document.querySelector(".tablaColegios>tbody");
 

@@ -27,17 +27,7 @@ body
 .tablaColegios
 {
 
-    background-color: #e68a00;
     color: white;
-
-}
-
-.tablaColegios tr:first-child>td
-{
-
-    background-color: #b36b00;
-    padding-top: 5px;
-    padding-bottom: 5px;
 
 }
 
@@ -51,12 +41,41 @@ body
 
 }
 
+.tablaColegios tr:first-child>td:hover
+{
+
+    background-color: #e68a00;
+
+}
+
+.tablaColegios tr>td:last-child:hover
+{
+
+    background-color: #e68a00;
+
+}
+
+.tablaColegios td:hover
+{
+
+    background-color: #b68a00;
+
+}
+
 .modificarColegios
 {
 
     width: 90%;
     color: white;
     background-color: #804d00;
+
+}
+
+.modificarColegios:hover
+{
+
+    
+    background-color: #b68a00;
 
 }
 
@@ -93,5 +112,13 @@ body
     width: 30%;
     color: white;
     background-color: #804d00;
+
+}
+
+.botonColegio:hover
+{
+
+    
+    background-color: #b68a00;
 
 }
